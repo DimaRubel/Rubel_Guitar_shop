@@ -1,0 +1,90 @@
+.promo {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.promo__wrapper {
+  width: 403px;
+}
+
+.promo__header {
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 15px;
+  color: var(--classic-text);
+  letter-spacing: 0.07em;
+}
+
+.promo__text {
+  font-size: 12px;
+  line-height: 15px;
+  color: var(--classic-text);
+  letter-spacing: 0.07em;
+  margin: 0;
+  margin-top: 10px;
+  margin-bottom: 18px;
+}
+
+.promo__button-wrapper {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.promo__button {
+  width: 170px;
+  height: 36px;
+  background: none;
+  border: 1px solid var(--filter-border);
+  cursor: pointer;
+  font-size: 15px;
+  line-height: 15px;
+  letter-spacing: 0.07em;
+  border-radius: 2px;
+}
+
+.promo__button-ticket {
+  width: 200px;
+  height: 36px;
+  background: var(--button-text);
+  border-radius: 2px;
+  border: none;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 15px;
+  letter-spacing: 0.05em;
+  color: var(--white-text);
+  cursor: pointer;
+}
+
+.promo__price {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  width: 220px;
+} 
+
+.promo__price-header {
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 15px;
+  letter-spacing: 0.05em;
+  color: var(--text-color);
+  margin-right: 4px;
+  margin-bottom: 44px;
+}
+
+.promo__price-button {
+  border: none;
+  border-radius: 2px;
+  background: var(--buy);
+  width: 220px;
+  height: 36px;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 15px;
+  letter-spacing: 0.09em;
+  color: var(--white-text);
+  cursor: pointer;
+}

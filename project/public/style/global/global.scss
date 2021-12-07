@@ -1,0 +1,66 @@
+:root {
+  --basket: #F20505;
+  --border: #3F3F3F;
+  --text-color:  #474747;
+  --opacity: #585757;
+  --classic-text: #000000;
+  --checkbox: #9F9E9E; 
+  --filter-border: #DDDADA;
+  --white-text: #FFFFFF;
+  --button-text: #C1C1C1;
+  --buy: #E27F00;
+  --footer: #3F3F3F;
+}
+
+// img {
+//   width: 100%;
+// }
+
+.page__body {
+  font-family: 'Droid Sans', sans-serif;
+  font-size: 14px;
+  line-height: 15px;
+  font-weight: 400;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.body__wrapper {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: min-content 35px 1fr min-content;
+  align-content: start;
+}
+
+h2, h3, ul {
+  margin: 0;
+  padding: 0;
+}
+
+.layout,
+.catalog__wrapper,
+.catalog__container,
+.footer__wrapper,
+.product__container {
+  width: 100%;
+  padding: 19px 20px;
+  box-sizing: border-box;
+  margin: 0 auto;
+  flex-grow: 1;
+  max-width: 980px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
