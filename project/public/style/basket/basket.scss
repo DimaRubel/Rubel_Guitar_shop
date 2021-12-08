@@ -20,6 +20,7 @@
 }
 
 .product__item {
+  position: relative;
   display: grid;
   grid-template-columns: 1fr 2fr 1fr 1fr 1fr;
   border-top: 1px solid var(--filter-border);
@@ -113,4 +114,27 @@
 .product__price-modificate {
   font-weight: 700;
   margin-right: -8px;
+}
+
+.product__delete {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  top: 20px;
+  left: 0px;
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  outline: 0;
+}
+
+.product__delete::before {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  top: 0;
+  left: 0;
+  background-image: url('../../image/close.svg');
+  background-repeat: no-repeat;
 }

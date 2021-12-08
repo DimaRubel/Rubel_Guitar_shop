@@ -1,8 +1,10 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { AppRoute } from "../../const";
 
 function Header() {
+  const cardOffers = useSelector((state) => state.card);
   return(
     <header className="header">
       <div className="layout">
@@ -32,7 +34,7 @@ function Header() {
             <div className="menu__item">
               <Link to={AppRoute.BASKET} className="menu__link">
                 <span className="menu__icon menu__button-basket">
-                  <span className="menu__notify">2</span>
+                  <span className="menu__notify">{cardOffers.length}</span>
                 </span>
               </Link>
             </div>

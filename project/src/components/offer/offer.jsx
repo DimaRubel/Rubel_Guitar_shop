@@ -1,15 +1,16 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import PopupCard from "../popup-card/popup-card";
+import Success from "../success/success";
 
 function Offer({currentOffer}) {
   const [offerActive, setOfferActive] = useState(false);
+  const [successActive,setSuccessActive] = useState(false);
   return(
     <>
       <article className="guitar">
         <div className="guitar__centerman">
           <a className="guitar__link">
-            <img className="guitar__image" src="./image/electro-1.png" width="68" height="190" />
+            <img className="guitar__image" src={`./image/${currentOffer.image}`} width="68" height="190" />
           </a>
         </div>
 
@@ -23,7 +24,7 @@ function Offer({currentOffer}) {
 
         <div className="guitar__name-wrapper">
           <h3 className="guitar__name">{currentOffer.name}</h3>
-          <h3 className="guitar__price">{currentOffer.price}</h3>
+          <h3 className="guitar__price">{currentOffer.price} ₽</h3>
         </div>
 
         <div className="guitar__buy-wrapper">
@@ -36,6 +37,7 @@ function Offer({currentOffer}) {
         </div>
       </article>
       <PopupCard offerActive={offerActive} setOfferActive={setOfferActive} currentOffer={currentOffer} />
+      {/* <Success success={successActive} successClose={setSuccessActive}/>; */}
     </>
   );
 }

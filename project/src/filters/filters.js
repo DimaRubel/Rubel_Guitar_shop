@@ -1,4 +1,5 @@
 export const filterOffer = (offers, price, types, strings) => {
+  console.log(offers, price, types, strings);
    return offers
           .filter((offer) => {
             if(price.max === 0) return offer.price >= price.min;

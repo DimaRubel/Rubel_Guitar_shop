@@ -37,14 +37,27 @@ function Price() {
   return(
     <div className="filter__price">
       <h3 className="filter__header">Цена, ₽</h3>
-      <label className="visually-hidden">от</label>
-      <NumberFormat className="filter__input" value={min} onValueChange={(e) => {
-        setMin((e.floatValue < 0) ? -e.floatValue : e.floatValue);
-      }} onBlur={validateMin} />
-      <label className="visually-hidden">до</label>
-      <NumberFormat className="filter__input" value={max} onValueChange={(e) => {
-        setMax((e.floatValue < 0) ? -e.floatValue : e.floatValue);
-      }} onBlur={validateMax} />
+      <div className="filter__wrapper">
+        <label className="visually-hidden" htmlFor="before">от</label>
+        <NumberFormat className="filter__input" value={min} onValueChange={(e) => {
+          setMin((e.floatValue < 0) ? -e.floatValue : e.floatValue);
+        }} onBlur={validateMin} 
+        id="before"
+        placeholder="1000"
+        />
+        <div>
+          <svg width="14" height="1" viewBox="0 0 14 1" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <line y1="0.5" x2="14" y2="0.5" stroke="#585757"/>
+          </svg>
+        </div>
+        <label className="visually-hidden" htmlFor="after">до</label>
+        <NumberFormat className="filter__input" value={max} onValueChange={(e) => {
+          setMax((e.floatValue < 0) ? -e.floatValue : e.floatValue);
+        }} onBlur={validateMax} 
+          id="after"
+          placeholder="30 000"
+        />
+      </div>
     </div>
   );
 }

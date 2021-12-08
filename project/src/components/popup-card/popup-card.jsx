@@ -1,6 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { ActionCreator } from "../../store/action";
 
 function PopupCard({offerActive, setOfferActive, currentOffer}) {
+  const dispatch = useDispatch();
+  
   return(
     <div className={(offerActive) ? "popup-card__active" : "popup-card"} 
       onClick={evt => setOfferActive(false)}
@@ -15,9 +19,11 @@ function PopupCard({offerActive, setOfferActive, currentOffer}) {
             <p className="popup-card__text">{currentOffer.type}, {currentOffer.strings} струнная </p>
             <p className="popup-card__price">Цена: {currentOffer.price} ₽</p>
           </div>
-          <button className="popup-card__button">Добавить в корзину</button>
-          <button className="popup-card__close"></button>
+          <button className="popup-card__button" onClick={() => {
+            dispatch(ActionCreator.addToCard(currentOffer));
+            }}>Добавить в корзину</button>
         </div>
+        <button className="popup-card__close" onClick={() => setOfferActive(false)}></button>
       </div>
     </div>
   );

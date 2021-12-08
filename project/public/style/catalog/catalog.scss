@@ -35,6 +35,8 @@
 
 .catalog__wrapper {
   padding: 0 19px;
+  margin-top: -40px;
+  margin-bottom: 49px;
 }
 
 .catalog__header {
@@ -65,27 +67,23 @@
   display: grid;
   grid-template-columns: 1fr 3fr;
   grid-template-rows: min-content 1fr;
-  margin-bottom: 143px;
+  margin-bottom: 58px;
   grid-column-gap: 6px;
-}
-
-.sort {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 49px;
-  margin-bottom: 28px;
-  grid-row: 1;
-  grid-column: span 2;
 }
 
 .sort__header {
   font-size: 19px;
   line-height: 21px;
+  grid-row: 1;
+  margin-bottom: 28px;
 }
 
 .sort__wrapper {
   display: flex;
   flex-wrap: wrap;
+  grid-row: 1;
+  grid-column: 2;
+  margin-bottom: 28px;
 }
 
 .sort__header-opacity,
@@ -96,7 +94,10 @@
   letter-spacing: 0.09em;
   font-weight: 400;
   color: var(--classic-text);
+  margin-right: 12px;
 }
+
+
 
 .sort__text,
 .sort__text-active  {
@@ -104,6 +105,7 @@
   background: none;
   cursor: pointer;
   color: var(--opacity);
+  margin-right: 21px;
 }
 
 .sort__text-active {
@@ -126,18 +128,32 @@
   font-size: 19px;
   line-height: 21px;
   color: var(--classic-text);
-  margin-bottom: 25px;
+  margin-bottom: 24px;
+}
+
+.filter__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .filter__type {
   padding-bottom: 15px;
-  margin-bottom: 30px;
+  margin-bottom: 33px;
   border-bottom: 1px solid var(--filter-border);
 }
 
 .filter__input {
-  width: 84px;
+  width: 76px;
   height: 21px;
+  text-align: center;
+}
+
+.filter__input::placeholder {
+  letter-spacing: 0.05em;
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 14px;
+  line-height: 10px;
 }
 
 .filter__label {
@@ -198,7 +214,10 @@
   display: flex;
   justify-content: space-between;
   width: 52px;
-  margin-right: 11px;
+  margin-right: 21px;
+  grid-column: 2;
+  grid-row: 1;
+  justify-self: end;
 }
 
 .filter__button-up,
@@ -227,13 +246,16 @@
 .content {
   display: grid;
   grid-template-columns: repeat(auto-fill, 220px);
+  grid-template-rows: min-content;
   grid-row: 2;
   column-gap: 20px;
   row-gap: 30px;
+  align-items: start;
+  justify-self: auto;
 }
 
 .guitar {
-  min-height: 304px;
+  min-height: 302px;
   min-width: 197px;
   border: 1px solid var(--filter-border);
 }
@@ -367,6 +389,12 @@
   width: 100%;
   height: 4px;
   box-shadow: 0 6px 0 0 var(--border);
+}
+
+.pagination {
+  grid-column: 1/4;
+  display: flex;
+  justify-content: end;
 }
 
 .page__pagination {

@@ -1,5 +1,6 @@
 .popup-card {
   display: none;
+  transform: scale(0);
 }
 
 .popup-card__active {
@@ -25,6 +26,7 @@
   background-color: var(--white-text);
   padding: 30px 50px 23px 50px;
   border-radius: 4px;
+  position: relative;
 }
 
 .popup-card__header {
@@ -86,4 +88,27 @@
   line-height: 15px;
   letter-spacing: 0.09em;
   margin-top: 13px;
+}
+
+.popup-card__close {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  top: 20px;
+  right: 24px;
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  outline: 0;
+}
+
+.popup-card__close::before {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  top: 0;
+  left: 0;
+  background-image: url('../../image/close.svg');
+  background-repeat: no-repeat;
 }

@@ -43,7 +43,6 @@ function MainContent({offer}) {
         </div>
 
         <div className="catalog__container">
-          <div className="sort">
             <h3 className="sort__header">Фильтр</h3>
             <div className="sort__wrapper">
               <h3 className="sort__header-opacity">Сортировать:</h3>
@@ -73,7 +72,6 @@ function MainContent({offer}) {
               <path d="M17.417 5.33301L4.58366 5.33301L11.0003 15.4163L17.417 5.33301Z" fill="#6C6C6C"/>
               </svg></button>
             </div>
-          </div>
 
           <div className="filter">
             <form>
