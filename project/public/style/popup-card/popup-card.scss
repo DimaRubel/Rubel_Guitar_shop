@@ -66,6 +66,12 @@
   margin-bottom: 6px;
 }
 
+.popup-card__button-wrapper {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
 .popup-card__price {
   font-weight: bold;
   font-size: 20px;
@@ -111,4 +117,30 @@
   left: 0;
   background-image: url('../../image/close.svg');
   background-repeat: no-repeat;
+}
+
+.popup-card__button-continue {
+  border: 1px solid var(--opacity);
+  box-sizing: border-box;
+  border-radius: 2px;
+  background: none;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 15px;
+  letter-spacing: 0.09em;
+  width: 220px;
+  height: 46px;
+  color: var(--opacity);
+  margin-top: 16px;
+}
+
+.popup-card__button-continue:hover {
+  border: 1px solid rgba(88, 87, 87, 0.7);
+  color: rgba(88, 87, 87, 0.7);
+}
+
+.popup-card__button-continue:active,
+.popup-card__button-continue:focus {
+  border: 1px solid rgba(108, 108, 108, 0.5);
+  color: rgba(88, 87, 87, 0.5);
 }

@@ -46,12 +46,14 @@ const reducer = (state = initialState, action) => {
     case ActionType.SHOW_FILTER_RESULT: 
       return {
         ...state,
-        filteredOffer: sortList(filterOffer([...state.offer], state.filterPrice, state.filterType, state.filterStrings), state.fieldForSort,state.sortType),
+        currentIndex: 0,
+        filteredOffer: sortList(filterOffer(
+          [...state.offer], state.filterPrice, state.filterType, state.filterStrings),
+           state.fieldForSort,state.sortType),
       }
     case ActionType.CHANGE_FILTER_TYPE:
       return {
         ...state,
-        currentIndex: 0,
         filterType: action.payload.isDelete 
           ? state.filterType.filter((type) => type !== action.payload.type)
           : [action.payload.type, ...state.filterType],

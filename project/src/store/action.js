@@ -7,7 +7,7 @@ export const ActionType = {
   CHANGE_FILTER_STRING: 'filter/changeFilterString',
   SHOW_FILTER_RESULT: 'filter/showFilterResult',
   CHANGE_CURRENT_PAGINATION: 'filter/currentPagination',
-  SET_CURRENT_PAGINATION: 'filter/showCurrentPagination',
+  SET_CURRENT_PAGINATION: 'filter/setCurrentPagination',
   ADD_TO_CARD: 'card/addToCard',
   DELETE_FROM_CARD: 'card/deleteFromCard',
   UP: 'up',
@@ -43,11 +43,11 @@ export const ActionCreator = {
     type: ActionType.SHOW_FILTER_RESULT,
     payload: '',
   }),
-  changeCurrentFilter: (filter) => ({
+  changePagination: (filter) => ({
     type: ActionType.CHANGE_CURRENT_PAGINATION,
     payload: filter,
   }),
-  showCurrentFilter: (filter) => ({
+  setCurrentPagination: (filter) => ({
     type: ActionType.SET_CURRENT_PAGINATION,
     payload: filter,
   }),

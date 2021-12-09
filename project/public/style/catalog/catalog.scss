@@ -50,7 +50,8 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  width: 160px;
+  width: 158px;
+  margin-left: 2px;
 }
 
 .catalog__nav {
@@ -187,10 +188,26 @@
 }
 
 .filter__input-checkbox:checked+label::before {
-  width: 24px;
-  height: 24px;
+  width: 22px;
+  height: 22px;
   background-image: url("../../image/active-checkbox.svg");
   background-size: cover;
+}
+
+.filter__input-checkbox:hover + label::before {
+  border: 0.7px solid #585757;
+}
+
+.filter__input-checkbox:focus + label::before,
+.filter__input-checkbox:active + label::before{
+  border: 0.7px solid #C1C1C1;
+}
+
+.filter__input-checkbox[type="checkbox"]:disabled + label::before {
+  background-color: #F7F3F3;
+  color: var(--disabled);
+  border: 1px solid var(--disabled);
+  opacity: 0.3;
 }
 
 .filter__number {
@@ -208,6 +225,18 @@
   height: 30px;
   border: none;
   cursor: pointer;
+}
+
+.filter__button:hover,
+.guitar__details:hover {
+  background-color:  #585757;
+}
+
+.filter__button:active,
+.filter__button:focus,
+.guitar__details:active,
+.guitar__details:focus {
+  background-color: #9F9E9E;
 }
 
 .sort__wrapper-button {
@@ -357,15 +386,36 @@
 }
 
 .guitar__buy {
+  position: relative;
   font-size: 13px;
   line-height: 15px;
   color: var(--white-text);
   background-color: var(--buy);
   border-radius: 2px;
-  width: 89px;
+  padding: 2px 14px 2px 27px;
   height: 23px;
   border: none;
   cursor: pointer;
+  letter-spacing: 0.05em;
+}
+
+.guitar__buy::before {
+  position: absolute;
+  content: "";
+  width: 12px;
+  height: 12px;
+  top: 4px;
+  left: 10px;
+  background: url("../../image/cart.svg") no-repeat;
+}
+
+.guitar__buy:hover {
+  background-color: #FFA839;
+}
+
+.guitar__buy:active,
+.guitar__buy:focus {
+  background-color: #DA8B26;
 }
 
 .image-back-foother {

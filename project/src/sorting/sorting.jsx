@@ -10,3 +10,8 @@ export const  sortList = (offer, field, type) => {
       return offer;
   }
 };
+
+export function addMask(number, isFloat) {
+  let formater = new Intl.NumberFormat('ru', {minimumFractionDigits: (isFloat)?2:0});
+  return formater.format(number);
+}

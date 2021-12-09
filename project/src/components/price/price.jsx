@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import NumberFormat from "react-number-format";
 import { useDispatch } from "react-redux";
+import { NULL } from "../../const";
 import { ActionCreator } from "../../store/action";
 ActionCreator
 
@@ -11,7 +12,7 @@ function Price() {
 
   function validateMin() {
     if(max === '') {
-      dispatch(ActionCreator.changeFilterPrice({min,max: 0}));
+      dispatch(ActionCreator.changeFilterPrice({min,max: NULL}));
       return;
     };
     if(min> max) {
@@ -24,7 +25,7 @@ function Price() {
 
   function validateMax() {
     if(min === '') {
-      dispatch(ActionCreator.changeFilterPrice({min: 0,max}));
+      dispatch(ActionCreator.changeFilterPrice({min: NULL,max}));
       return;
     };
     if(min > max) {
@@ -40,7 +41,7 @@ function Price() {
       <div className="filter__wrapper">
         <label className="visually-hidden" htmlFor="before">от</label>
         <NumberFormat className="filter__input" value={min} onValueChange={(e) => {
-          setMin((e.floatValue < 0) ? -e.floatValue : e.floatValue);
+          setMin((e.floatValue < NULL) ? -e.floatValue : e.floatValue);
         }} onBlur={validateMin} 
         id="before"
         placeholder="1000"
@@ -52,7 +53,7 @@ function Price() {
         </div>
         <label className="visually-hidden" htmlFor="after">до</label>
         <NumberFormat className="filter__input" value={max} onValueChange={(e) => {
-          setMax((e.floatValue < 0) ? -e.floatValue : e.floatValue);
+          setMax((e.floatValue < NULL) ? -e.floatValue : e.floatValue);
         }} onBlur={validateMax} 
           id="after"
           placeholder="30 000"

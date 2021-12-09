@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { addMask } from "../../sorting/sorting";
 import PopupCard from "../popup-card/popup-card";
 import Success from "../success/success";
 
@@ -24,7 +25,7 @@ function Offer({currentOffer}) {
 
         <div className="guitar__name-wrapper">
           <h3 className="guitar__name">{currentOffer.name}</h3>
-          <h3 className="guitar__price">{currentOffer.price} ₽</h3>
+          <h3 className="guitar__price">{addMask(currentOffer.price)} ₽</h3>
         </div>
 
         <div className="guitar__buy-wrapper">
@@ -36,8 +37,8 @@ function Offer({currentOffer}) {
           }}>Купить</button>
         </div>
       </article>
-      <PopupCard offerActive={offerActive} setOfferActive={setOfferActive} currentOffer={currentOffer} />
-      {/* <Success success={successActive} successClose={setSuccessActive}/>; */}
+      {offerActive && <PopupCard offerActive={offerActive} setOfferActive={setOfferActive} setSuccessActive={setSuccessActive} currentOffer={currentOffer} />}
+      {successActive && <Success success={successActive} successClose={setSuccessActive}/>}
     </>
   );
 }

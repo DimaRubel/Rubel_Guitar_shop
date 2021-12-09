@@ -34,7 +34,7 @@
 
 .promo__button {
   width: 170px;
-  height: 36px;
+  height: 33px;
   background: none;
   border: 1px solid var(--filter-border);
   cursor: pointer;
@@ -42,6 +42,11 @@
   line-height: 15px;
   letter-spacing: 0.07em;
   border-radius: 2px;
+  text-align: center;
+}
+
+.promo__button::placeholder {
+  color: #000000;
 }
 
 .promo__button-ticket {
@@ -56,6 +61,14 @@
   letter-spacing: 0.05em;
   color: var(--white-text);
   cursor: pointer;
+}
+
+.promo__button-ticket:hover {
+  background-color:  #585757;
+}
+
+.promo__button-ticket:active {
+  background-color: #9F9E9E;
 }
 
 .promo__price {
@@ -87,4 +100,13 @@
   letter-spacing: 0.09em;
   color: var(--white-text);
   cursor: pointer;
+}
+
+.promo__price-button:hover {
+  background-color: #FFA839;
+}
+
+.promo__price-button:active,
+.promo__price-button:focus {
+  background-color: #DA8B26;
 }

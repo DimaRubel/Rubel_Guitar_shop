@@ -14,25 +14,25 @@ function Header() {
           </div>
           <nav className="navigation">
             <ul className="navigation__list">
-              <li className="navigation__item"><Link to={AppRoute.CONVERTER}>Каталог</Link></li>
-              <li className="navigation__item"><a>Где купить?</a></li>
-              <li className="navigation__item"><a>О компании</a></li>
-              <li className="navigation__item"><a>Cервис-центры</a></li>
+              <li className="navigation__item"><Link className="navigation__item-link" to={AppRoute.CONVERTER}>Каталог</Link></li>
+              <li className="navigation__item"><a className="navigation__item-link" href="#">Где купить?</a></li>
+              <li className="navigation__item"><a className="navigation__item-link" href="#">О компании</a></li>
+              <li className="navigation__item"><a className="navigation__item-link" href="#">Cервис-центры</a></li>
             </ul>
           </nav>
           <div className="menu">
             <div className="menu__item">
-              <a href="#" className="menu__link">
+              <a href="#" className="menu__link menu__item-link">
                 <span className="menu__icon menu__button-map"></span>
               </a>
             </div>
             <div className="menu__item">
-              <a href="#" className="menu__link">
+              <a href="#" className="menu__link menu__item-link">
                 <span className="menu__icon menu__button-search"></span>
               </a>
             </div>
             <div className="menu__item">
-              <Link to={AppRoute.BASKET} className="menu__link">
+              <Link to={AppRoute.BASKET} className="menu__link menu__item-link">
                 <span className="menu__icon menu__button-basket">
                   <span className="menu__notify">{cardOffers.length}</span>
                 </span>

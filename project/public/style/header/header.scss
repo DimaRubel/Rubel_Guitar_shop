@@ -24,15 +24,24 @@
   margin-left: 15%;
 }
 
-.navigation__item a {
+.navigation__item-link {
   text-decoration: none;
-  color: var(--text-color);
+  color: var(--classic-text);
 }
 
 .navigation__item {
   margin-right: 40px;
   letter-spacing: 0.09em;
   cursor: pointer;
+}
+
+.navigation__item-link:hover {
+  color: #474747;
+}
+
+.navigation__item-link:active,
+.navigation__item-link:focus {
+  color: rgba(71, 71, 71, 0.5);
 }
 
 .navigation__item:last-child {

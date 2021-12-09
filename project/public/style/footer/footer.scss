@@ -4,30 +4,39 @@
 
 .footer__wrapper {
   padding: 61px 20px;
-  display: grid;
-  grid-template-areas: "a b c d e g"
-                        "f b c d e g";
-  grid-template-columns: 240px 1fr;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .footer__logo {
-  grid-area: a;
+  width: 240px;
+}
+
+.footer__logo-link {
+  margin-bottom: 52px;
+  display: block;
 }
 
 .about-us {
-  grid-area: b;
+  width: 138px;
+  margin-right: 2.4%;
+  margin-top: 5px;
 }
 
 .footer-catalog {
-  grid-area: c;
+  width: 162px;
+  margin-top: 5px;
 }
 
 .information {
-  grid-area: d;
+  width: 102px;
+  margin-right: 14.3%;
+  margin-top: 5px;
 }
 
 .contacts {
-  grid-area: e;
+  width: 127px;
+  margin-top: 5px;
 }
 
 .social {
@@ -50,10 +59,15 @@
 .contacts__header {
   font-size: 14px;
   line-height: 44px;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.13em;;
   color: var(--white-text);
   font-weight: 400;
   opacity: .7;
+  margin-bottom: 3px;
+}
+
+.contacts__header {
+  margin-bottom: 0;
 }
 
 .about-us__item,
@@ -63,4 +77,61 @@
   font-size: 10px;
   line-height: 12px;
   color: var(--white-text);
+  letter-spacing: 0.02em;
+}
+
+.about-us__item {
+  margin-bottom: 12px;
+}
+
+.footer-catalog__item,
+.information__item {
+  letter-spacing: 0.12em;
+  margin-bottom: 8px;
+}
+
+.contacts__item {
+  letter-spacing: 0.13em;
+}
+
+.contacts__item:nth-child(2) {
+  margin-left: 15px;
+  letter-spacing: 0.1em;
+  margin-bottom: 14px;
+}
+
+.contacts__item-link {
+  position: relative;
+  text-decoration: none;
+  color: var(--white-text);
+  margin-top: 2px;
+}
+
+.contacts__item-link::before {
+  position: absolute;
+  content: "";
+  top: 2px;
+  left: -14px;
+  width: 10px;
+  height: 10px;
+  background: url("../../image/icon_phone.svg") no-repeat;
+}
+
+.contacts__item:nth-child(4) {
+  margin-left: 15px;
+  letter-spacing: 0.1em;
+}
+
+.contacts__item-time {
+  position: relative;
+}
+
+.contacts__item-time::before {
+  position: absolute;
+  content: "";
+  top: 2px;
+  left: -14px;
+  width: 10px;
+  height: 10px;
+  background: url("../../image/icon_clock.svg") no-repeat;
 }
