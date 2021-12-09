@@ -21,7 +21,7 @@ module.exports = {
   target: target,
 
   output: {
-    path: path.resolve(__dirname,"bundle"),
+    path: path.resolve(__dirname,"build"),
     assetModuleFilename: "images/[hash][ext][query]",
   },
 
