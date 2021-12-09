@@ -1,5 +1,6 @@
+import { TypeName } from "../const";
+
 export const filterOffer = (offers, price, types, strings) => {
-  console.log(offers, price, types, strings);
    return offers
           .filter((offer) => {
             if(price.max === 0) return offer.price >= price.min;
@@ -7,7 +8,7 @@ export const filterOffer = (offers, price, types, strings) => {
           })
           .filter((offer) => {
             if(types.length === 0) return true;
-            return types.includes(offer.type);
+            return types.map((type) => TypeName[type]).includes(offer.type)
           })
           .filter((offer) => {
             if(strings.length === 0) return true;

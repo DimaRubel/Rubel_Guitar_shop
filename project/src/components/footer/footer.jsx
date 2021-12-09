@@ -37,22 +37,22 @@ function Footer() {
         <div className="footer-catalog">
           <h3 className="footer-catalog__header">Каталог</h3>
           <ul className="footer-catalog__list">
-            <li className="footer-catalog__item">Акустические гитары</li>
-            <li className="footer-catalog__item">Классические гитары</li>
-            <li className="footer-catalog__item">Электрогитары</li>
-            <li className="footer-catalog__item">Бас-гитары</li>
-            <li className="footer-catalog__item">Укулеле</li>
+            <li className="footer-catalog__item"><a href="#">Акустические гитары</a></li>
+            <li className="footer-catalog__item"><a href="#">Классические гитары</a></li>
+            <li className="footer-catalog__item"><a href="#">Электрогитары</a></li>
+            <li className="footer-catalog__item"><a href="#">Бас-гитары</a></li>
+            <li className="footer-catalog__item"><a href="#">Укулеле</a></li>
           </ul>
         </div>
 
         <div className="information">
           <h3 className="information__header">Информация</h3>
           <ul className="information__list">
-            <li className="information__item">Где купить?</li>
-            <li className="information__item">Блог</li>
-            <li className="information__item">Вопрос - ответ</li>
-            <li className="information__item">Возврат</li>
-            <li className="information__item">Сервис-центры</li>
+            <li className="information__item"><a href="#">Где купить?</a></li>
+            <li className="information__item"><a href="#">Блог</a></li>
+            <li className="information__item"><a href="#">Вопрос - ответ</a></li>
+            <li className="information__item"><a href="#">Возврат</a></li>
+            <li className="information__item"><a href="#">Сервис-центры</a></li>
           </ul>
         </div>
 

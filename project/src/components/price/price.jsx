@@ -6,8 +6,8 @@ import { ActionCreator } from "../../store/action";
 ActionCreator
 
 function Price() {
-  const [min, setMin] = useState('');
-  const [max, setMax]  = useState('');
+  const [min, setMin] = useState(0);
+  const [max, setMax]  = useState(0);
   const dispatch = useDispatch();
 
   function validateMin() {
@@ -40,7 +40,7 @@ function Price() {
       <h3 className="filter__header">Цена, ₽</h3>
       <div className="filter__wrapper">
         <label className="visually-hidden" htmlFor="before">от</label>
-        <NumberFormat className="filter__input" value={min} onValueChange={(e) => {
+        <NumberFormat className="filter__input" value={min === 0 ? '':min} onValueChange={(e) => {
           setMin((e.floatValue < NULL) ? -e.floatValue : e.floatValue);
         }} onBlur={validateMin} 
         id="before"
@@ -52,7 +52,7 @@ function Price() {
           </svg>
         </div>
         <label className="visually-hidden" htmlFor="after">до</label>
-        <NumberFormat className="filter__input" value={max} onValueChange={(e) => {
+        <NumberFormat className="filter__input" value={max === 0 ? '':max} onValueChange={(e) => {
           setMax((e.floatValue < NULL) ? -e.floatValue : e.floatValue);
         }} onBlur={validateMax} 
           id="after"

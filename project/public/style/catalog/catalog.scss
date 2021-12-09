@@ -8,9 +8,9 @@
 .image-back {
   background-image: url("../../image/image_guitar.png");
   background-repeat: no-repeat;
-  height: 288px;
   background-position: right;
   background-size: contain;
+  height: 298px;
 }
 
 .image-back__layout {
@@ -35,7 +35,7 @@
 
 .catalog__wrapper {
   padding: 0 19px;
-  margin-top: -40px;
+  margin-top: -51px;
   margin-bottom: 49px;
 }
 
@@ -205,9 +205,11 @@
 
 .filter__input-checkbox[type="checkbox"]:disabled + label::before {
   background-color: #F7F3F3;
-  color: var(--disabled);
   border: 1px solid var(--disabled);
-  opacity: 0.3;
+}
+
+.filter__input-checkbox[type="checkbox"]:disabled + label {
+  color: var(--disabled);
 }
 
 .filter__number {
@@ -246,7 +248,7 @@
   margin-right: 21px;
   grid-column: 2;
   grid-row: 1;
-  justify-self: end;
+  margin-left: auto;
 }
 
 .filter__button-up,
@@ -424,7 +426,7 @@
   background-position-x: left;
   background-position-y: -2px;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: inherit;
 }
 
 .image-back__layout-foother {
@@ -442,9 +444,11 @@
 }
 
 .pagination {
-  grid-column: 1/4;
+  grid-row: 3;
+  grid-column: 2;
   display: flex;
   justify-content: end;
+  margin-top: 31px;
 }
 
 .page__pagination {
@@ -474,4 +478,8 @@
   background-color: var(--white-text);
   margin-left: 5px;
   cursor: pointer;
+}
+
+.pagination__layout {
+  margin-right: 10px;
 }

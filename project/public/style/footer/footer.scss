@@ -90,6 +90,11 @@
   margin-bottom: 8px;
 }
 
+.footer-catalog__item a,
+.information__item a {
+  text-decoration: none;
+  color: var(--white-text);
+}
 .contacts__item {
   letter-spacing: 0.13em;
 }

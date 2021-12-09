@@ -6,14 +6,19 @@ import { ActionCreator } from "../../store/action";
 function PopupDelete({deleteActive, setDeleteActive, currentOffer}) {
   const dispatch = useDispatch();
 
+  function close() {
+    const body = document.querySelector('body');
+    body.style.overflow = 'auto';
+    setDeleteActive(false);
+  }
+
   useEffect(() => {
     const body = document.querySelector('body');
     body.style.overflow = deleteActive ? 'hidden' : 'auto';
 
     const handleEsc = (event) => {
       if (event.keyCode === 27) {
-        body.style.overflow = 'auto';
-        setDeleteActive(false);
+        close();
      }
    };
     window.addEventListener('keydown', handleEsc);
@@ -26,7 +31,7 @@ function PopupDelete({deleteActive, setDeleteActive, currentOffer}) {
     <>
     {(deleteActive) ? <FocusTrap>
     <div className={(deleteActive) ? "popup-card__active" : "popup-card"} 
-      onClick={evt => setDeleteActive(false)}
+      onClick={close}
     >
       <div className="popup-card__wrapper" onClick={(evt) => evt.stopPropagation()}>
         <h2 className="popup-card__header">Удалить этот товар?</h2>
@@ -41,16 +46,12 @@ function PopupDelete({deleteActive, setDeleteActive, currentOffer}) {
           <div className="popup-card__button-wrapper">
             <button className="popup-card__button" onClick={() => {
               dispatch(ActionCreator.deleteFromCard(currentOffer));
-              setDeleteActive(false);
-              const body = document.querySelector('body');
-              body.style.overflow = 'auto';
+              close();
               }}>Удалить товар</button>
-            <button className="popup-card__button-continue" onClick={() => {
-              setDeleteActive(false);
-              }}>Продолжить покупки</button>
+            <button className="popup-card__button-continue" onClick={close}>Продолжить покупки</button>
           </div>
         </div>
-        <button className="popup-card__close" onClick={() => setDeleteActive(false)}></button>
+        <button className="popup-card__close" onClick={close}></button>
       </div>
     </div>
     </FocusTrap>: null}

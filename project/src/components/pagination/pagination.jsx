@@ -14,7 +14,7 @@ function Pagination() {
   }
   return(
     <div className="pagination">
-      {(currentIndex > ONE) ? <button className="page__continue" 
+      {(currentIndex > ONE) ? <button className="page__continue pagination__layout" 
         onClick={() => dispatch(ActionCreator.changePagination(-ONE))}>Назад</button> : null}
 
       {(pageCount > ONE) ? <span className={`page__pagination page__pagination${currentIndex === ONE ? "-active" : ""}`}

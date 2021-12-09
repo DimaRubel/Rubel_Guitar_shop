@@ -4,14 +4,20 @@ import { Link } from "react-router-dom";
 import { AppRoute } from "../../const";
 
 function Success({success,successClose}) {
+
+  function close() {
+    const body = document.querySelector('body');
+    body.style.overflow = 'auto';
+    successClose(false);
+  }
+
   useEffect(() => {
     const body = document.querySelector('body');
     body.style.overflow = success ? 'hidden' : 'auto';
 
     const handleEsc = (event) => {
       if (event.keyCode === 27) {
-        body.style.overflow = 'auto';
-        successClose(false);
+        close();
      }
    };
     window.addEventListener('keydown', handleEsc);
@@ -19,20 +25,19 @@ function Success({success,successClose}) {
       window.removeEventListener('keydown', handleEsc);
     };
   }, [success]);
+
+
   return(
     <>
    {(success ) ? <FocusTrap>
-   <div className={ "success"} onClick={evt => successClose(false)}>
+   <div className={ "success"} onClick={close}>
       <div className="success__wrapper" onClick={(evt) => evt.stopPropagation()}>
         <h2 className="success__header">Товар успешно добавлен в корзину</h2>
         <div className="success__button-wrapper">
-          <Link to={AppRoute.BASKET} className="success__basket" onClick={() => {
-            const body = document.querySelector('body');
-            body.style.overflow = 'auto'
-            }}>Перейти в корзину</Link>
-          <button className="success__continue" onClick={() => successClose(false)}>Продолжить покупки</button>
+          <Link to={AppRoute.BASKET} className="success__basket" onClick={close}>Перейти в корзину</Link>
+          <button className="success__continue" onClick={close}>Продолжить покупки</button>
         </div>
-        <button className="success__close" onClick={evt => successClose(false)}></button>
+        <button className="success__close" onClick={close}></button>
       </div>
     </div>
     </FocusTrap> : null}

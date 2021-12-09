@@ -6,14 +6,19 @@ import { ActionCreator } from "../../store/action";
 function PopupCard({offerActive, setOfferActive, currentOffer, setSuccessActive}) {
   const dispatch = useDispatch();
 
+  function close() {
+    const body = document.querySelector('body');
+    body.style.overflow = 'auto';
+    setOfferActive(false);
+  }
+ 
   useEffect(() => {
     const body = document.querySelector('body');
     body.style.overflow = offerActive ? 'hidden' : 'auto';
 
     const handleEsc = (event) => {
       if (event.keyCode === 27) {
-        body.style.overflow = 'auto';
-        setOfferActive(false);
+        close();
      }
    };
     window.addEventListener('keydown', handleEsc);
@@ -26,12 +31,12 @@ function PopupCard({offerActive, setOfferActive, currentOffer, setSuccessActive}
     <>
     {(offerActive) ? <FocusTrap>
     <div className={(offerActive) ? "popup-card__active" : "popup-card"} 
-      onClick={evt => setOfferActive(false)}
+      onClick={close}
     >
-      <div className="popup-card__wrapper" onClick={(evt) => evt.stopPropagation()}>
+      <div className="popup-card__wrapper" onClick={(evt) => {evt.stopPropagation() }}>
         <h2 className="popup-card__header">Добавить товар в корзину</h2>
         <div className="popup-card__case">
-          <img src="./image/electro-1-mini.png" />
+          <img src={`./image/${currentOffer.image}`} width="56" height="128" />
           <div className="popup-card__description-wrapper">
             <h2 className="popup-card__description-header">{currentOffer.name}</h2>
             <p className="popup-card__text">Артикул: {currentOffer.article}</p>
@@ -40,11 +45,11 @@ function PopupCard({offerActive, setOfferActive, currentOffer, setSuccessActive}
           </div>
           <button className="popup-card__button" onClick={() => {
             dispatch(ActionCreator.addToCard(currentOffer));
-            setOfferActive(false);
             setSuccessActive(true);
+            close();
             }}>Добавить в корзину</button>
         </div>
-        <button className="popup-card__close" onClick={() => setOfferActive(false)}></button>
+        <button className="popup-card__close" onClick={close}></button>
       </div>
     </div>
     </FocusTrap> : null}

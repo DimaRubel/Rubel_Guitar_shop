@@ -79,7 +79,7 @@ export const offer = [
     popular: 27,
     strings: TypeNumber.FOUR,
     price: 30000,
-    image: 'electro-1.png'
+    image: 'electro-4.png'
   },
   {
     id: 9,
@@ -98,7 +98,7 @@ export const offer = [
     type: TypeName[TypeFilter.ELECTROGUITAR],
     popular: 20,
     strings: TypeNumber.FOUR,
-    price: "23 000",
+    price: 23000,
     image: 'electro-4.png'
   },
   {
@@ -108,7 +108,7 @@ export const offer = [
     type: TypeName[TypeFilter.ELECTROGUITAR],
     popular: 19,
     strings:TypeNumber.FOUR,
-    price: "18 700",
+    price: 18700,
     image: 'electro-3.png'
   },
   {
@@ -118,7 +118,7 @@ export const offer = [
     type: TypeName[TypeFilter.ELECTROGUITAR],
     popular: 30,
     strings: TypeNumber.SEVEN,
-    price: "35 000",
+    price: 35000,
     image: 'electro-2.png'
   },
   {
@@ -128,7 +128,7 @@ export const offer = [
     type: TypeName[TypeFilter.ELECTROGUITAR],
     popular: 28,
     strings: TypeNumber.SIX,
-    price: "14 900",
+    price: 14900,
     image: 'electro-2.png'
   },
   {
@@ -138,7 +138,7 @@ export const offer = [
     type: TypeName[TypeFilter.ACUSTIC],
     popular: TypeNumber.SEVEN,
     strings: TypeNumber.SIX,
-    price: "7 600",
+    price: 7600,
     image: 'ukylele-2.png'
   },
   {
@@ -148,7 +148,7 @@ export const offer = [
     type: TypeName[TypeFilter.ACUSTIC],
     popular: 19,
     strings: TypeNumber.SIX,
-    price: "6 500",
+    price: 6500,
     image: 'ukylele-2.png'
   },
   {
@@ -158,7 +158,7 @@ export const offer = [
     type: TypeName[TypeFilter.ACUSTIC],
     popular: 26,
     strings: TypeNumber.SEVEN,
-    price: "12 000",
+    price: 12000,
     image: 'ukylele-2.png'
   },
   {
@@ -168,7 +168,7 @@ export const offer = [
     type: TypeName[TypeFilter.ACUSTIC],
     popular: 31,
     strings: TypeNumber.SEVEN,
-    price: "9 900",
+    price: 9900,
     image: 'ukylele-1.png'
   },
   {
@@ -178,7 +178,7 @@ export const offer = [
     type: TypeName[TypeFilter.ACUSTIC],
     popular: 28,
     strings: TypeNumber.TWELWE,
-    price: "8 900",
+    price: 8900,
     image: 'ukylele-1.png'
   },
   {
@@ -188,7 +188,7 @@ export const offer = [
     type: TypeName[TypeFilter.ACUSTIC],
     popular: 34,
     strings: TypeNumber.TWELWE,
-    price: "10 500",
+    price: 10500,
     image: 'ukylele-2.png'
   },
   {
@@ -198,7 +198,7 @@ export const offer = [
     type: TypeName[TypeFilter.ACUSTIC],
     popular: 9,
     strings: TypeNumber.SIX,
-    price: "13 300",
+    price: 13300,
     image: 'ukylele-1.png'
   },
   {
@@ -208,7 +208,7 @@ export const offer = [
     type: TypeName[TypeFilter.UKYLELE],
     popular: 37,
     strings:TypeNumber.FOUR,
-    price: "4 800",
+    price: 4800,
     image: 'ukylele-2.png'
   },
   {
@@ -218,7 +218,7 @@ export const offer = [
     type: TypeName[TypeFilter.UKYLELE],
     popular: 5,
     strings:TypeNumber.FOUR,
-    price: "1 900",
+    price: 1900,
     image: 'ukylele-2.png'
   },
   {
@@ -228,7 +228,7 @@ export const offer = [
     type: TypeName[TypeFilter.UKYLELE],
     popular: 23,
     strings:TypeNumber.FOUR,
-    price: "2 500",
+    price: 2500,
     image: 'ukylele-1.png'
   },
   {
@@ -238,7 +238,7 @@ export const offer = [
     type: TypeName[TypeFilter.UKYLELE],
     popular: 23,
     strings:TypeNumber.FOUR,
-    price: "3 800",
+    price: 3800,
     image: 'ukylele-2.png'
   },
   {
@@ -248,7 +248,7 @@ export const offer = [
     type: TypeName[TypeFilter.UKYLELE],
     popular: 10,
     strings:TypeNumber.FOUR,
-    price: "4 100",
+    price: 4100,
     image: 'ukylele-2.png'
   },
   {
@@ -258,7 +258,7 @@ export const offer = [
     type: TypeName[TypeFilter.UKYLELE],
     popular: 14,
     strings:TypeNumber.FOUR,
-    price: "2 700",
+    price: 2700,
     image: 'ukylele-1.png'
   },
   {
@@ -268,7 +268,7 @@ export const offer = [
     type: TypeName[TypeFilter.UKYLELE],
     popular: 29,
     strings:TypeNumber.FOUR,
-    price: "6 700",
+    price: 6700,
     image: 'ukylele-2.png'
   },
   {
@@ -368,7 +368,7 @@ export const offer = [
     type: TypeName[TypeFilter.ELECTROGUITAR],
     popular: 20,
     strings: TypeNumber.FOUR,
-    price: "23 000",
+    price: 23000,
     image: 'electro-4.png'
   },
   {
@@ -378,7 +378,7 @@ export const offer = [
     type: TypeName[TypeFilter.ELECTROGUITAR],
     popular: 19,
     strings:TypeNumber.FOUR,
-    price: "18 700",
+    price: 18700,
     image: 'electro-3.png'
   },
   {
@@ -388,7 +388,7 @@ export const offer = [
     type: TypeName[TypeFilter.ELECTROGUITAR],
     popular: 30,
     strings: TypeNumber.SEVEN,
-    price: "35 000",
+    price: 35000,
     image: 'electro-2.png'
   },
   {
@@ -398,7 +398,7 @@ export const offer = [
     type: TypeName[TypeFilter.ELECTROGUITAR],
     popular: 28,
     strings: TypeNumber.SIX,
-    price: "14 900",
+    price: 14900,
     image: 'electro-2.png'
   },
   {
@@ -408,7 +408,7 @@ export const offer = [
     type: TypeName[TypeFilter.ACUSTIC],
     popular: TypeNumber.SEVEN,
     strings: TypeNumber.SIX,
-    price: "7 600",
+    price: 7600,
     image: 'ukylele-2.png'
   },
   {
@@ -418,7 +418,7 @@ export const offer = [
     type: TypeName[TypeFilter.ACUSTIC],
     popular: 19,
     strings: TypeNumber.SIX,
-    price: "6 500",
+    price: 6500,
     image: 'ukylele-2.png'
   },
   {
@@ -428,7 +428,7 @@ export const offer = [
     type: TypeName[TypeFilter.ACUSTIC],
     popular: 26,
     strings: TypeNumber.SEVEN,
-    price: "12 000",
+    price: 12000,
     image: 'ukylele-2.png'
   },
   {
@@ -438,7 +438,7 @@ export const offer = [
     type: TypeName[TypeFilter.ACUSTIC],
     popular: 31,
     strings: TypeNumber.SEVEN,
-    price: "9 900",
+    price: 9900,
     image: 'ukylele-1.png'
   },
   {
@@ -448,7 +448,7 @@ export const offer = [
     type: TypeName[TypeFilter.ACUSTIC],
     popular: 28,
     strings: TypeNumber.TWELWE,
-    price: "8 900",
+    price: 8900,
     image: 'ukylele-1.png'
   },
   {
@@ -458,7 +458,7 @@ export const offer = [
     type: TypeName[TypeFilter.ACUSTIC],
     popular: 34,
     strings: TypeNumber.TWELWE,
-    price: "10 500",
+    price: 10500,
     image: 'ukylele-2.png'
   },
   {
@@ -468,7 +468,7 @@ export const offer = [
     type: TypeName[TypeFilter.ACUSTIC],
     popular: 9,
     strings: TypeNumber.SIX,
-    price: "13 300",
+    price: 13300,
     image: 'ukylele-1.png'
   },
   {
@@ -478,7 +478,7 @@ export const offer = [
     type: TypeName[TypeFilter.UKYLELE],
     popular: 37,
     strings:TypeNumber.FOUR,
-    price: "4 800",
+    price: 4800,
     image: 'ukylele-2.png'
   },
   {
@@ -488,7 +488,7 @@ export const offer = [
     type: TypeName[TypeFilter.UKYLELE],
     popular: 5,
     strings:TypeNumber.FOUR,
-    price: "1 900",
+    price: 1900,
     image: 'ukylele-2.png'
   },
   {
@@ -498,7 +498,7 @@ export const offer = [
     type: TypeName[TypeFilter.UKYLELE],
     popular: 23,
     strings:TypeNumber.FOUR,
-    price: "2 500",
+    price: 2500,
     image: 'ukylele-1.png'
   },
   {
@@ -508,7 +508,7 @@ export const offer = [
     type: TypeName[TypeFilter.UKYLELE],
     popular: 23,
     strings:TypeNumber.FOUR,
-    price: "3 800",
+    price: 3800,
     image: 'ukylele-2.png'
   },
   {
@@ -518,7 +518,7 @@ export const offer = [
     type: TypeName[TypeFilter.UKYLELE],
     popular: 10,
     strings:TypeNumber.FOUR,
-    price: "4 100",
+    price: 4100,
     image: 'ukylele-2.png'
   },
   {
@@ -528,7 +528,7 @@ export const offer = [
     type: TypeName[TypeFilter.UKYLELE],
     popular: 14,
     strings:TypeNumber.FOUR,
-    price: "2 700",
+    price: 2700,
     image: 'ukylele-1.png'
   },
   {
@@ -538,7 +538,7 @@ export const offer = [
     type: TypeName[TypeFilter.UKYLELE],
     popular: 29,
     strings:TypeNumber.FOUR,
-    price: "6 700",
+    price: 6700,
     image: 'ukylele-2.png'
   },
   {
@@ -548,7 +548,7 @@ export const offer = [
     type: TypeName[TypeFilter.ACUSTIC],
     popular: 28,
     strings: TypeNumber.TWELWE,
-    price: "8 900",
+    price: 8900,
     image: 'ukylele-1.png'
   },
   {
@@ -558,7 +558,7 @@ export const offer = [
     type: TypeName[TypeFilter.ACUSTIC],
     popular: 34,
     strings: TypeNumber.TWELWE,
-    price: "10 500",
+    price: 10500,
     image: 'ukylele-2.png'
   },
   {
@@ -568,7 +568,7 @@ export const offer = [
     type: TypeName[TypeFilter.ACUSTIC],
     popular: 9,
     strings: TypeNumber.SIX,
-    price: "13 300",
+    price: 13300,
     image: 'ukylele-1.png'
   },
   {
@@ -578,7 +578,7 @@ export const offer = [
     type: TypeName[TypeFilter.UKYLELE],
     popular: 37,
     strings:TypeNumber.FOUR,
-    price: "4 800",
+    price: 4800,
     image: 'ukylele-2.png'
   },
   {
@@ -588,7 +588,7 @@ export const offer = [
     type: TypeName[TypeFilter.UKYLELE],
     popular: 5,
     strings:TypeNumber.FOUR,
-    price: "1 900",
+    price: 1900,
     image: 'ukylele-2.png'
   },
   {
@@ -598,7 +598,7 @@ export const offer = [
     type: TypeName[TypeFilter.UKYLELE],
     popular: 23,
     strings:TypeNumber.FOUR,
-    price: "2 500",
+    price: 2500,
     image: 'ukylele-1.png'
   },
 ];

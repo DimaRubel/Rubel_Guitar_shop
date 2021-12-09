@@ -64,7 +64,7 @@ function BasketContent() {
       
                 return <li key={offer.id} className="product__item">
                 <div className="product__img">
-                  <img className="product__image" src={`./image/${item.offer.image}`} />
+                  <img className="product__image" src={`./image/${item.offer.image}`} width="56" height="128" />
                 </div>
 
                 <div className="product__description-wrapper">

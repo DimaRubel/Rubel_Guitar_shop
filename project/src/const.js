@@ -45,14 +45,14 @@ export const TypeName = {
 };
 
 export const CountStringsOfType = {
-  electroguitar: [4, 6, 7],
-  ukylele: [4],
-  acustic: [6, 7, 12],
+  electroguitar: ['4', '6', '7'],
+  ukylele: ['4'],
+  acustic: ['6', '7', '12'],
 };
 
 export const TypeOfCountStrings = {
-  4: ['ukylele','electroguitar'],
-  6: ['electroguitar','acustic'],
-  7: ['electroguitar','acustic'],
-  12: ['acustic'],
+  '4': ['ukylele','electroguitar'],
+  '6': ['electroguitar','acustic'],
+  '7': ['electroguitar','acustic'],
+  '12': ['acustic'],
 }

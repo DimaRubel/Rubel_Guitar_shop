@@ -70,24 +70,26 @@ function MainContent({offer}) {
               onClick={() => {
                 dispatch(ActionCreator.changeSortField(SortField.POPULAR));
               }}>по популярности</button>
-            </div>
+
             <div className="sort__wrapper-button">
-              <button type="button" className={`filter__button-up${currentSortType === ONE ? "-active" : ""}`} 
-              onClick={() => {
-                dispatch(ActionCreator.changeSortType(ONE));
-              }}>
+                <button type="button" className={`filter__button-up${currentSortType === ONE ? "-active" : ""}`} 
+                onClick={() => {
+                  dispatch(ActionCreator.changeSortType(ONE));
+                }}>
+                  <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M4.58301 15.667H17.4163L10.9997 5.58366L4.58301 15.667Z" fill="black"/>
+                  </svg>
+                </button>
+                <button type="button" className={`filter__button-down${currentSortType === -ONE ? "-active" : ""}`}
+                onClick={() => {
+                  dispatch(ActionCreator.changeSortType(-ONE));
+                }}>
                 <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M4.58301 15.667H17.4163L10.9997 5.58366L4.58301 15.667Z" fill="black"/>
-                </svg>
-              </button>
-              <button type="button" className={`filter__button-down${currentSortType === -ONE ? "-active" : ""}`}
-               onClick={() => {
-                dispatch(ActionCreator.changeSortType(-ONE));
-              }}>
-              <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M17.417 5.33301L4.58366 5.33301L11.0003 15.4163L17.417 5.33301Z" fill="#6C6C6C"/>
-              </svg></button>
+                <path d="M17.417 5.33301L4.58366 5.33301L11.0003 15.4163L17.417 5.33301Z" fill="#6C6C6C"/>
+                </svg></button>
             </div>
+            </div>
+            
 
           <div className="filter">
             <form>
@@ -117,22 +119,26 @@ function MainContent({offer}) {
                 <input data-type={TypeNumber.FOUR} id="4" className="filter__input-checkbox"
                   type="checkbox"
                   onChange={changeNumberString}
-                  disabled={accessibleStringCount.length !== NULL && !accessibleStringCount.includes(FOUR) && !cuerrentFilterStrings.includes("4")} />
+                  disabled={accessibleStringCount.length !== NULL && 
+                  !accessibleStringCount.includes('4') && !cuerrentFilterStrings.includes("4")} />
                 <label className="filter__label" htmlFor="4" >4</label>
                 <input data-type={TypeNumber.SIX} id="6" className="filter__input-checkbox" 
                   type="checkbox"
                   onChange={changeNumberString}
-                  disabled={accessibleStringCount.length !== NULL && !accessibleStringCount.includes(SIX) && !cuerrentFilterStrings.includes("6")} />
+                  disabled={accessibleStringCount.length !== NULL && 
+                  !accessibleStringCount.includes('6') && !cuerrentFilterStrings.includes("6")} />
                 <label className="filter__label" htmlFor="6" >6</label>
                 <input data-type={TypeNumber.SEVEN} id="7" className="filter__input-checkbox" 
                   type="checkbox"
                   onChange={changeNumberString}
-                  disabled={accessibleStringCount.length !== NULL && !accessibleStringCount.includes(SEVEN) && !cuerrentFilterStrings.includes("7")} />
+                  disabled={accessibleStringCount.length !== NULL && 
+                  !accessibleStringCount.includes('7') && !cuerrentFilterStrings.includes("7")} />
                 <label className="filter__label" htmlFor="7" >7</label>
                 <input data-type={TypeNumber.TWELWE} id="12" className="filter__input-checkbox"
                   type="checkbox"
                   onChange={changeNumberString}
-                  disabled={accessibleStringCount.length !== NULL && !accessibleStringCount.includes(TWELWE) && !cuerrentFilterStrings.includes("12")} />
+                  disabled={accessibleStringCount.length !== NULL && 
+                  !accessibleStringCount.includes('12') && !cuerrentFilterStrings.includes("12")} />
                 <label className="filter__label" htmlFor="12" >12</label>
               </div>
               <button className="filter__button" onClick={(evt) => {
@@ -149,8 +155,8 @@ function MainContent({offer}) {
                 currentOffer={currentOffer} 
               />)
             }
-          <Pagination/>
           </div>
+          <Pagination/>
         </div>
         <div className="image-back-foother">
           <div className="image-back__layout-foother"></div>
