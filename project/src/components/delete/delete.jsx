@@ -2,6 +2,7 @@ import FocusTrap from "focus-trap-react";
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { ActionCreator } from "../../store/action";
+import propTypes from 'prop-types';
 
 function PopupDelete({deleteActive, setDeleteActive, currentOffer}) {
   const dispatch = useDispatch();
@@ -57,6 +58,12 @@ function PopupDelete({deleteActive, setDeleteActive, currentOffer}) {
     </FocusTrap>: null}
     </>
   );
+}
+
+PopupDelete.propTypes = {
+  currentOffer: propTypes.object,
+  setDeleteActive: propTypes.func,
+  deleteActive: propTypes.bool,
 }
 
 export default PopupDelete;

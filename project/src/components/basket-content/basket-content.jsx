@@ -60,7 +60,6 @@ function BasketContent() {
               {offers.map((item) => {
                 const offer = item.offer;
                 const count = item.count;
-                console.log(item)
       
                 return <li key={offer.id} className="product__item">
                 <div className="product__img">

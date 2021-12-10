@@ -1,15 +1,15 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { FOUR, NULL, ONE, THREE, TWO } from "../../const";
+import { FOUR, NULL, ONE, PAGE, THREE, TWO } from "../../const";
 import { ActionCreator } from "../../store/action";
 
 function Pagination() {
   const dispatch = useDispatch();
   const currentIndex = useSelector((state) => state.currentIndex ) + ONE;
   const offer = useSelector((state) => state.filteredOffer);
-  let pageCount = Math.trunc(offer.length/9);
+  let pageCount = Math.trunc(offer.length/ PAGE);
   
-  if(offer.length / 9 > pageCount) {
+  if(offer.length / PAGE > pageCount) {
     pageCount +=1;
   }
   return(

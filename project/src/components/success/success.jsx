@@ -2,6 +2,7 @@ import FocusTrap from "focus-trap-react";
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { AppRoute } from "../../const";
+import propTypes from 'prop-types';
 
 function Success({success,successClose}) {
 
@@ -43,6 +44,11 @@ function Success({success,successClose}) {
     </FocusTrap> : null}
   </>
   ); 
+}
+
+Success.propTypes = {
+  success: propTypes.bool,
+  successClose: propTypes.func,
 }
 
 export default Success;

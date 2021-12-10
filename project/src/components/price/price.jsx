@@ -3,7 +3,6 @@ import NumberFormat from "react-number-format";
 import { useDispatch } from "react-redux";
 import { NULL } from "../../const";
 import { ActionCreator } from "../../store/action";
-ActionCreator
 
 function Price() {
   const [min, setMin] = useState(0);
