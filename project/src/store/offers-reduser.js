@@ -1,4 +1,4 @@
-import { SortField } from "../const";
+import { SortField, TypeFilter, TypeName, TypeNumber } from "../const";
 import { filterOffer } from "../filters/filters";
 import { sortList } from "../sorting/sorting";
 import { ActionType } from "./action";
@@ -15,7 +15,27 @@ const initialState = {
   filterType: [],
   filterStrings: [],
   currentIndex: 0,
-  card: [],
+  card: [
+ {offer: {
+    id: 1,
+    article: "SO757575",
+    name: "Честер Bass",
+    type: TypeName[TypeFilter.ELECTROGUITAR],
+    popular: 15,
+    strings: TypeNumber.SEVEN,
+    price: 17500,
+    image: 'electro-1.png'
+  }, count: 1},
+  {offer: {
+    id: 2,
+    article: "TK129049",
+    name: "СURT Z300",
+    type: TypeName[TypeFilter.ELECTROGUITAR],
+    popular: 9,
+    strings: TypeNumber.SIX,
+    price: 29500,
+    image: 'electro-2.png'
+  }, count: 1}],
 };
 
 const reducer = (state = initialState, action) => {
