@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { addMask } from "../../sorting/sorting";
 import PopupCard from "../popup-card/popup-card";
 import Success from "../success/success";
+import propTypes from 'prop-types';
 
 function Offer({currentOffer}) {
   const [offerActive, setOfferActive] = useState(false);
@@ -41,6 +42,10 @@ function Offer({currentOffer}) {
       {successActive && <Success success={successActive} successClose={setSuccessActive}/>}
     </>
   );
+}
+
+Success.propTypes = {
+  currentOffer: propTypes.array,
 }
 
 export default Offer;

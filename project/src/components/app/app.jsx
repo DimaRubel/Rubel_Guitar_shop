@@ -27,12 +27,4 @@ function App() {
   );
 }
 
-// App.propTypes = {
-//   offer: PropTypes.array.isRequired,
-// };
-
-// const mapStateToProps = (state) => ({
-//   offer: state.offer,
-// });
-
 export default App;

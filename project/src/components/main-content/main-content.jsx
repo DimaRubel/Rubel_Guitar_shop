@@ -5,6 +5,7 @@ import { ActionCreator } from "../../store/action";
 import Offer from "../offer/offer";
 import Pagination from "../pagination/pagination";
 import Price from "../price/price";
+import propTypes from 'prop-types';
 
 function MainContent({offer}) {
   const dispatch = useDispatch();
@@ -164,6 +165,10 @@ function MainContent({offer}) {
       </section>
     </main>
   );
+}
+
+MainContent.propTypes = {
+  offer: propTypes.array,
 }
 
 export default MainContent;

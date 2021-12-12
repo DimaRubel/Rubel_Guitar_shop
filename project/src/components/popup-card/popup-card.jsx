@@ -3,6 +3,8 @@ import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { addMask } from "../../sorting/sorting";
 import { ActionCreator } from "../../store/action";
+import propTypes from 'prop-types';
+
 function PopupCard({offerActive, setOfferActive, currentOffer, setSuccessActive}) {
   const dispatch = useDispatch();
 
@@ -55,6 +57,13 @@ function PopupCard({offerActive, setOfferActive, currentOffer, setSuccessActive}
     </FocusTrap> : null}
     </>
   );
+}
+
+PopupCard.propTypes = {
+  offerActive: propTypes.bool,
+  setOfferActive: propTypes.func,
+  currentOffer: propTypes.object,
+  setSuccessActive: propTypes.func,
 }
 
 export default PopupCard;
