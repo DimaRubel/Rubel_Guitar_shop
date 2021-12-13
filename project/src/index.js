@@ -6,14 +6,14 @@ import { offer } from "./mock/mock.jsx";
 import { ActionCreator } from "./store/action.js";
 import {createStore} from 'redux';
 import {composeWithDevTools} from 'redux-devtools-extension';
-import { reducer } from "./store/offers-reduser.js";
+import redusers from "./store/redusers.js";
 
 const store = createStore(
-  reducer,
+  redusers,
   composeWithDevTools(),
 );
 
-store.dispatch(ActionCreator.loadOffers(offer));
+// store.dispatch(ActionCreator.loadOffers(offer));
 
 ReactDOM.render(
   <React.StrictMode>

@@ -366,6 +366,9 @@
   line-height: 15px;
   letter-spacing: 0.07em;
   font-weight: 400;
+  overflow: hidden;
+  overflow-wrap: anywhere;
+  text-overflow: ellipsis;
 }
 
 .guitar__details {
