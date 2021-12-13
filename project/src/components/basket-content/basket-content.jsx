@@ -6,9 +6,9 @@ import { ActionCreator } from "../../store/action";
 import PopupDelete from "../delete/delete";
 
 function BasketContent() {
-  const offers = useSelector((state) => state.card);
+  const offers = useSelector((state) => state.reducer.card);
   const dispatch = useDispatch();
-  const [deleteActive, setDeleteActive] = useState(false);
+  const [deleteActive, onDeleteClose] = useState(false);
   const [promo, setPromo] = useState();
   const [inputPromo, setInputPromo] = useState();
   const [error, setError] = useState('');
@@ -88,8 +88,8 @@ function BasketContent() {
                 <div className="product__price-wrapper product__button-wrapper-moduficate ">
                   <p className="product__price product__price-modificate">{addMask(offer.price * count)} ₽</p>
                 </div>
-                <button className="product__delete" onClick={() => setDeleteActive(true)}></button>
-                {deleteActive && <PopupDelete deleteActive={deleteActive} setDeleteActive={setDeleteActive} currentOffer={offer} />}
+                <button className="product__delete" onClick={() => onDeleteClose(true)}></button>
+                {deleteActive && <PopupDelete deleteActive={deleteActive} onDeleteClose={onDeleteClose} currentOffer={offer} />}
               </li>
               })}
             </ul>

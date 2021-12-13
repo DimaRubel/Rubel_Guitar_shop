@@ -12,7 +12,7 @@ function Offer({currentOffer}) {
       <article className="guitar">
         <div className="guitar__centerman">
           <a className="guitar__link">
-            <img className="guitar__image" src={`./image/${currentOffer.image}`} width="68" height="190" />
+            <img className="guitar__image" src={`./image/${currentOffer.image}`} width="68" height="190" alt="guitar" />
           </a>
         </div>
 
@@ -38,8 +38,8 @@ function Offer({currentOffer}) {
           }}>Купить</button>
         </div>
       </article>
-      {offerActive && <PopupCard offerActive={offerActive} setOfferActive={setOfferActive} setSuccessActive={setSuccessActive} currentOffer={currentOffer} />}
-      {successActive && <Success success={successActive} successClose={setSuccessActive}/>}
+      {offerActive && <PopupCard offerActive={offerActive} onOfferClose={setOfferActive} onSuccessActive={setSuccessActive} currentOffer={currentOffer} />}
+      {successActive && <Success success={successActive} onSuccessClose={setSuccessActive}/>}
     </>
   );
 }

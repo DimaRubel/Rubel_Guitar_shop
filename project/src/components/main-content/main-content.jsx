@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { CountStringsOfType, FOUR, NULL, ONE, PAGE, SEVEN, SIX, SortField, TWELWE, TypeFilter, TypeNumber, TypeOfCountStrings } from "../../const";
+import { CountStringsOfType, NULL, ONE, PAGE, SortField, TypeFilter, TypeNumber, TypeOfCountStrings } from "../../const";
 import { ActionCreator } from "../../store/action";
 import Offer from "../offer/offer";
 import Pagination from "../pagination/pagination";
@@ -9,11 +9,11 @@ import propTypes from 'prop-types';
 
 function MainContent({offer}) {
   const dispatch = useDispatch();
-  const currentSortField = useSelector((state) => state.fieldForSort);
-  const currentSortType = useSelector((state) => state.sortType);
-  const currentIndex = useSelector((state) => state.currentIndex);
-  const currentFilterType = useSelector((state) => state.filterType);
-  const cuerrentFilterStrings = useSelector((state) => state.filterStrings);
+  const currentSortField = useSelector((state) => state.offersSort.fieldForSort);
+  const currentSortType = useSelector((state) => state.offersSort.sortType);
+  const currentIndex = useSelector((state) => state.reducer.currentIndex);
+  const currentFilterType = useSelector((state) => state.reducer.filterType);
+  const cuerrentFilterStrings = useSelector((state) => state.reducer.filterStrings);
    
   const accessibleStringCount = currentFilterType
     .flatMap((type) => CountStringsOfType[type])
@@ -80,14 +80,17 @@ function MainContent({offer}) {
                   <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M4.58301 15.667H17.4163L10.9997 5.58366L4.58301 15.667Z" fill="black"/>
                   </svg>
+                  <span className="visually-hidden">сортировать по возрастанию</span>
                 </button>
                 <button type="button" className={`filter__button-down${currentSortType === -ONE ? "-active" : ""}`}
                 onClick={() => {
                   dispatch(ActionCreator.changeSortType(-ONE));
                 }}>
-                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M17.417 5.33301L4.58366 5.33301L11.0003 15.4163L17.417 5.33301Z" fill="#6C6C6C"/>
-                </svg></button>
+                  <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M17.417 5.33301L4.58366 5.33301L11.0003 15.4163L17.417 5.33301Z" fill="#6C6C6C"/>
+                  </svg>
+                  <span className="visually-hidden">сортировать по убыванию</span>
+                </button>
             </div>
             </div>
             

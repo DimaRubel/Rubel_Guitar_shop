@@ -5,8 +5,8 @@ import { ActionCreator } from "../../store/action";
 
 function Pagination() {
   const dispatch = useDispatch();
-  const currentIndex = useSelector((state) => state.currentIndex ) + ONE;
-  const offer = useSelector((state) => state.filteredOffer);
+  const currentIndex = useSelector((state) => state.offerPagination.currentIndex ) + ONE;
+  const offer = useSelector((state) => state.reducer.filteredOffer);
   let pageCount = Math.trunc(offer.length/ PAGE);
   
   if(offer.length / PAGE > pageCount) {

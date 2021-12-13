@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { AppRoute } from "../../const";
 
 function Header() {
-  const cardOffers = useSelector((state) => state.card);
+  const cardOffers = useSelector((state) => state.reducer.card);
   return(
     <header className="header">
       <div className="layout">

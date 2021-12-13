@@ -4,12 +4,12 @@ import { Link } from "react-router-dom";
 import { AppRoute } from "../../const";
 import propTypes from 'prop-types';
 
-function Success({success,successClose}) {
+function Success({success,onSuccessClose}) {
 
   function close() {
     const body = document.querySelector('body');
     body.style.overflow = 'auto';
-    successClose(false);
+    onSuccessClose(false);
   }
 
   useEffect(() => {
@@ -48,7 +48,7 @@ function Success({success,successClose}) {
 
 Success.propTypes = {
   success: propTypes.bool,
-  successClose: propTypes.func,
+  onSuccessClose: propTypes.func,
 }
 
 export default Success;

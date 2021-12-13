@@ -4,13 +4,13 @@ import { useDispatch } from "react-redux";
 import { ActionCreator } from "../../store/action";
 import propTypes from 'prop-types';
 
-function PopupDelete({deleteActive, setDeleteActive, currentOffer}) {
+function PopupDelete({deleteActive, onDeleteClose, currentOffer}) {
   const dispatch = useDispatch();
 
   function close() {
     const body = document.querySelector('body');
     body.style.overflow = 'auto';
-    setDeleteActive(false);
+    onDeleteClose(false);
   }
 
   useEffect(() => {
@@ -62,7 +62,7 @@ function PopupDelete({deleteActive, setDeleteActive, currentOffer}) {
 
 PopupDelete.propTypes = {
   currentOffer: propTypes.object,
-  setDeleteActive: propTypes.func,
+  onDeleteClose: propTypes.func,
   deleteActive: propTypes.bool,
 }
 

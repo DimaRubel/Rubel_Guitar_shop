@@ -5,11 +5,10 @@ import { AppRoute } from "../../const";
 import Basket from '../basket/basket';
 import Main from '../main/main';
 import NotFound from "../not-found/not-found";
-import {connect, useSelector} from 'react-redux';
-import PropTypes from 'prop-types';
+import {useSelector} from 'react-redux';
 
 function App() {
-  const offer = useSelector((state) => state.filteredOffer);
+  const offer = useSelector((state) => state.reducer.filteredOffer);
   return (
     <BrowserRouter>
       <Switch>

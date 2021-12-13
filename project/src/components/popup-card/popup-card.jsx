@@ -5,13 +5,13 @@ import { addMask } from "../../sorting/sorting";
 import { ActionCreator } from "../../store/action";
 import propTypes from 'prop-types';
 
-function PopupCard({offerActive, setOfferActive, currentOffer, setSuccessActive}) {
+function PopupCard({offerActive, onOfferClose, currentOffer, onSuccessActive}) {
   const dispatch = useDispatch();
 
   function close() {
     const body = document.querySelector('body');
     body.style.overflow = 'auto';
-    setOfferActive(false);
+    onOfferClose(false);
   }
  
   useEffect(() => {
@@ -47,7 +47,7 @@ function PopupCard({offerActive, setOfferActive, currentOffer, setSuccessActive}
           </div>
           <button className="popup-card__button" onClick={() => {
             dispatch(ActionCreator.addToCard(currentOffer));
-            setSuccessActive(true);
+            onSuccessActive(true);
             close();
             }}>Добавить в корзину</button>
         </div>
@@ -61,9 +61,9 @@ function PopupCard({offerActive, setOfferActive, currentOffer, setSuccessActive}
 
 PopupCard.propTypes = {
   offerActive: propTypes.bool,
-  setOfferActive: propTypes.func,
+  onOfferClose: propTypes.func,
   currentOffer: propTypes.object,
-  setSuccessActive: propTypes.func,
+  onSuccessActive: propTypes.func,
 }
 
 export default PopupCard;

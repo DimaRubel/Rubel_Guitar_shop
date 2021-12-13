@@ -1,11 +1,13 @@
 import { SortField, TypeFilter, TypeName, TypeNumber } from "../const";
 import { filterOffer } from "../filters/filters";
+import { offer } from "../mock/mock";
 import { sortList } from "../sorting/sorting";
 import { ActionType } from "./action";
 
+
 const initialState = {
-  offer: [],
-  filteredOffer: [],
+  offer: offer,
+  filteredOffer: offer,
   fieldForSort: SortField.PRICE,
   sortType: 1,
   filterPrice: {
@@ -46,19 +48,16 @@ const reducer = (state = initialState, action) => {
         offer: action.payload,
         filteredOffer: action.payload,
       };
-    case ActionType.CHANGE_SORT_TYPE:
+    case ActionType.ADD_TO_CARD: 
+      const item = {
+        offer: action.payload,
+        count: 1,
+      }
       return {
         ...state,
-        sortType: action.payload,
-        filteredOffer: sortList([...state.filteredOffer], state.fieldForSort, action.payload),
-      };
-    case ActionType.CHANGE_SORT_FIELD:
-      return {
-        ...state,
-        fieldForSort: action.payload,
-        filteredOffer: sortList([...state.filteredOffer], action.payload, state.sortType),
-      };
-    case ActionType.CHANGE_FILTER_PRICE: 
+        card: [item, ...state.card],
+      }
+      case ActionType.CHANGE_FILTER_PRICE: 
       return {
         ...state,
         filterPrice: action.payload,
@@ -69,7 +68,7 @@ const reducer = (state = initialState, action) => {
         currentIndex: 0,
         filteredOffer: sortList(filterOffer(
           [...state.offer], state.filterPrice, state.filterType, state.filterStrings),
-           state.fieldForSort,state.sortType),
+          state.fieldForSort,state.sortType),
       }
     case ActionType.CHANGE_FILTER_TYPE:
       return {
@@ -85,50 +84,13 @@ const reducer = (state = initialState, action) => {
           ? state.filterStrings.filter((type) => type !== action.payload.type)
           : [action.payload.type, ...state.filterStrings],
       }
-    case ActionType.CHANGE_CURRENT_PAGINATION: 
-      return {
-        ...state,
-        currentIndex: state.currentIndex + action.payload,
-      }
-    case ActionType.SET_CURRENT_PAGINATION: 
-      return {
-        ...state,
-        currentIndex: action.payload,
-      }
-    case ActionType.ADD_TO_CARD: 
-      const item = {
-        offer: action.payload,
-        count: 1,
-      }
-      return {
-        ...state,
-        card: [item, ...state.card],
-      }
     case ActionType.DELETE_FROM_CARD: 
       return {
         ...state,
         card: [...state.card.filter((offer)=> offer.offer !== action.payload)],
       }
-    case ActionType.UP:
-      return {
-        ...state,
-        card: [...state.card.map((offer)=> {
-          if(offer.offer === action.payload) {
-            offer.count += 1;
-          }
-          return offer;
-        })],
-      }
-      case ActionType.DOWN:
-        return {
-          ...state,
-          card: [...state.card.map((offer)=> {
-            if(offer.offer === action.payload) {
-              offer.count -= 1;
-            }
-            return offer;
-          }).filter((offer)=> offer.count > 0)],
-        }
+      default: 
+        return state;
   }
 };
 
