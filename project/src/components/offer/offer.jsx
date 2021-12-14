@@ -11,7 +11,7 @@ function Offer({currentOffer}) {
     <>
       <article className="guitar">
         <div className="guitar__centerman">
-          <a className="guitar__link">
+          <a className="guitar__link" href="#">
             <img className="guitar__image" src={`./image/${currentOffer.image}`} width="68" height="190" alt="guitar" />
           </a>
         </div>

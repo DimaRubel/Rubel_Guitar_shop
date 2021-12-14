@@ -5,8 +5,8 @@ function Footer() {
     <footer className="footer">
       <div className="footer__wrapper">
         <div className="footer__logo">
-          <a className="footer__logo-link">
-            <img className="footer__logo-guitar" src="./image/logo-white.svg" width="67" height="70" />
+          <a className="footer__logo-link" href="#">
+            <img className="footer__logo-guitar" src="./image/logo-white.svg" width="67" height="70" alt="logo" />
           </a>
           <div className="social">
           <a className="social__link" href="https://www.facebook.com/" aria-label="Facebook">

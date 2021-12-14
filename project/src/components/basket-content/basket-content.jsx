@@ -99,7 +99,7 @@ function BasketContent() {
                 <h3 className="promo__header">Промокод на скидку</h3>
                 <p className="promo__text">Введите свой промокод, если он у вас есть.</p>
                 <div className="promo__button-wrapper">
-                  <input className="promo__button" onChange={(evt) => setInputPromo(evt.target.value)} placeholder="GITARAHIT"/>
+                  <input className="promo__button" onChange={(evt) => setInputPromo(evt.target.value)} />
                   <button className="promo__button-ticket" onClick={() => {
                     if(validatePromo()) {
                       setPromo(inputPromo);
