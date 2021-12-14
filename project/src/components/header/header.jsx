@@ -23,12 +23,16 @@ function Header() {
           <div className="menu">
             <div className="menu__item">
               <a href="#" className="menu__link menu__item-link">
-                <span className="menu__icon menu__button-map"></span>
+                <span className="menu__icon menu__button-map">
+                  <span className="visually-hidden">карта</span>
+                </span>
               </a>
             </div>
             <div className="menu__item">
               <a href="#" className="menu__link menu__item-link">
-                <span className="menu__icon menu__button-search"></span>
+                <span className="menu__icon menu__button-search">
+                  <span className="visually-hidden">поиск</span>
+                </span>
               </a>
             </div>
             <div className="menu__item">

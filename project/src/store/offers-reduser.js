@@ -1,4 +1,4 @@
-import { SortField, TypeFilter, TypeName, TypeNumber } from "../const";
+import { SortField } from "../const";
 import { filterOffer } from "../filters/filters";
 import { offer } from "../mock/mock";
 import { sortList } from "../sorting/sorting";
@@ -17,27 +17,7 @@ const initialState = {
   filterType: [],
   filterStrings: [],
   currentIndex: 0,
-  card: [
- {offer: {
-    id: 1,
-    article: "SO757575",
-    name: "Честер Bass",
-    type: TypeName[TypeFilter.ELECTROGUITAR],
-    popular: 15,
-    strings: TypeNumber.SEVEN,
-    price: 17500,
-    image: 'electro-1.png'
-  }, count: 1},
-  {offer: {
-    id: 2,
-    article: "TK129049",
-    name: "СURT Z300",
-    type: TypeName[TypeFilter.ELECTROGUITAR],
-    popular: 9,
-    strings: TypeNumber.SIX,
-    price: 29500,
-    image: 'electro-2.png'
-  }, count: 1}],
+  card: [],
 };
 
 const reducer = (state = initialState, action) => {
@@ -48,16 +28,19 @@ const reducer = (state = initialState, action) => {
         offer: action.payload,
         filteredOffer: action.payload,
       };
-    case ActionType.ADD_TO_CARD: 
-      const item = {
-        offer: action.payload,
-        count: 1,
-      }
+    case ActionType.CHANGE_SORT_TYPE:
       return {
         ...state,
-        card: [item, ...state.card],
-      }
-      case ActionType.CHANGE_FILTER_PRICE: 
+        sortType: action.payload,
+        filteredOffer: sortList([...state.filteredOffer], state.fieldForSort, action.payload),
+      };
+    case ActionType.CHANGE_SORT_FIELD:
+      return {
+        ...state,
+        fieldForSort: action.payload,
+        filteredOffer: sortList([...state.filteredOffer], action.payload, state.sortType),
+      };
+    case ActionType.CHANGE_FILTER_PRICE: 
       return {
         ...state,
         filterPrice: action.payload,
@@ -68,7 +51,7 @@ const reducer = (state = initialState, action) => {
         currentIndex: 0,
         filteredOffer: sortList(filterOffer(
           [...state.offer], state.filterPrice, state.filterType, state.filterStrings),
-          state.fieldForSort,state.sortType),
+           state.fieldForSort,state.sortType),
       }
     case ActionType.CHANGE_FILTER_TYPE:
       return {
@@ -84,13 +67,52 @@ const reducer = (state = initialState, action) => {
           ? state.filterStrings.filter((type) => type !== action.payload.type)
           : [action.payload.type, ...state.filterStrings],
       }
+    case ActionType.CHANGE_CURRENT_PAGINATION: 
+      return {
+        ...state,
+        currentIndex: state.currentIndex + action.payload,
+      }
+    case ActionType.SET_CURRENT_PAGINATION: 
+      return {
+        ...state,
+        currentIndex: action.payload,
+      }
+    case ActionType.ADD_TO_CARD: 
+      const item = {
+        offer: action.payload,
+        count: 1,
+      }
+      return {
+        ...state,
+        card: [item, ...state.card],
+      }
     case ActionType.DELETE_FROM_CARD: 
       return {
         ...state,
         card: [...state.card.filter((offer)=> offer.offer !== action.payload)],
       }
-      default: 
-        return state;
+    case ActionType.UP:
+      return {
+        ...state,
+        card: [...state.card.map((offer)=> {
+          if(offer.offer === action.payload) {
+            offer.count += 1;
+          }
+          return offer;
+        })],
+      }
+      case ActionType.DOWN:
+        return {
+          ...state,
+          card: [...state.card.map((offer)=> {
+            if(offer.offer === action.payload) {
+              offer.count -= 1;
+            }
+            return offer;
+          }).filter((offer)=> offer.count > 0)],
+        }
+        default:
+          return state;
   }
 };
 

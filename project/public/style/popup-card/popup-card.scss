@@ -94,6 +94,7 @@
   line-height: 15px;
   letter-spacing: 0.09em;
   margin-top: 13px;
+  cursor: pointer;
 }
 
 .popup-card__close {
@@ -132,6 +133,7 @@
   height: 46px;
   color: var(--opacity);
   margin-top: 16px;
+  cursor: pointer;
 }
 
 .popup-card__button-continue:hover {

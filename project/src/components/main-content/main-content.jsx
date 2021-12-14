@@ -9,8 +9,8 @@ import propTypes from 'prop-types';
 
 function MainContent({offer}) {
   const dispatch = useDispatch();
-  const currentSortField = useSelector((state) => state.offersSort.fieldForSort);
-  const currentSortType = useSelector((state) => state.offersSort.sortType);
+  const currentSortField = useSelector((state) => state.reducer.fieldForSort);
+  const currentSortType = useSelector((state) => state.reducer.sortType);
   const currentIndex = useSelector((state) => state.reducer.currentIndex);
   const currentFilterType = useSelector((state) => state.reducer.filterType);
   const cuerrentFilterStrings = useSelector((state) => state.reducer.filterStrings);
