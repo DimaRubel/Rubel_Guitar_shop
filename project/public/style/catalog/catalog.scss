@@ -198,8 +198,8 @@
   border: 0.7px solid #585757;
 }
 
-.filter__input-checkbox:focus + label::before,
-.filter__input-checkbox:active + label::before{
+
+.filter__input-checkbox:active + label::before {
   border: 0.7px solid #C1C1C1;
 }
 
@@ -210,6 +210,10 @@
 
 .filter__input-checkbox[type="checkbox"]:disabled + label {
   color: var(--disabled);
+}
+
+.filter__input-checkbox:focus + label{
+  border: 1px solid blue;
 }
 
 .filter__number {

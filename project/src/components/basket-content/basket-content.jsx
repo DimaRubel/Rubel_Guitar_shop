@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { NULL, Promocodes } from "../../const";
+import { NULL, ONE, Promocodes } from "../../const";
 import { addMask } from "../../sorting/sorting";
 import { ActionCreator } from "../../store/action";
 import PopupDelete from "../delete/delete";
@@ -78,7 +78,13 @@ function BasketContent() {
 
                 <div className="product__button-wrapper">
                   <div className="product__case">
-                    <button className="product__button-decrement" onClick={() => dispatch(ActionCreator.changeDown(offer))}>-</button>
+                    <button className="product__button-decrement" onClick={() => {
+                      if(count === ONE) {
+                        onDeleteClose(true);
+                      } else {
+                        dispatch(ActionCreator.changeDown(offer));
+                      }
+                      }}>-</button>
                     <p className="product__number">{count}</p>
                     <button className="product__button-increment" onClick={() => {
                       dispatch(ActionCreator.changeUp(offer))}}>+</button>

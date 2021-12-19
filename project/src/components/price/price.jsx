@@ -5,16 +5,18 @@ import { NULL } from "../../const";
 import { ActionCreator } from "../../store/action";
 
 function Price() {
-  const [min, setMin] = useState(0);
-  const [max, setMax]  = useState(0);
+  const [min, setMin] = useState('');
+  const [max, setMax]  = useState('');
   const dispatch = useDispatch();
 
   function validateMin() {
     if(max === '') {
-      dispatch(ActionCreator.changeFilterPrice({min,max: NULL}));
+      dispatch(ActionCreator.changeFilterPrice(
+        {min: min === '' ? NULL : min,
+        max: NULL}));
       return;
     };
-    if(min> max) {
+    if(min > max) {
       dispatch(ActionCreator.changeFilterPrice({min: max,max}));
       setMin(max);
       return;
@@ -24,7 +26,9 @@ function Price() {
 
   function validateMax() {
     if(min === '') {
-      dispatch(ActionCreator.changeFilterPrice({min: NULL,max}));
+      dispatch(ActionCreator.changeFilterPrice({
+        min: NULL,
+        max:  max === '' ? NULL : max}));
       return;
     };
     if(min > max) {
@@ -40,7 +44,7 @@ function Price() {
       <div className="filter__wrapper">
         <label className="visually-hidden" htmlFor="before">от</label>
         <NumberFormat className="filter__input" value={min === 0 ? '':min} onValueChange={(e) => {
-          setMin((e.floatValue < NULL) ? -e.floatValue : e.floatValue);
+          setMin(((e.floatValue < NULL) ? -e.floatValue : e.floatValue) ?? 0);
         }} onBlur={validateMin} 
         id="before"
         placeholder="1000"
@@ -52,7 +56,7 @@ function Price() {
         </div>
         <label className="visually-hidden" htmlFor="after">до</label>
         <NumberFormat className="filter__input" value={max === 0 ? '':max} onValueChange={(e) => {
-          setMax((e.floatValue < NULL) ? -e.floatValue : e.floatValue);
+          setMax(((e.floatValue < NULL) ? -e.floatValue : e.floatValue) ?? 0);
         }} onBlur={validateMax} 
           id="after"
           placeholder="30 000"

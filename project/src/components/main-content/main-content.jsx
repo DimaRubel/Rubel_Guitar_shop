@@ -105,17 +105,17 @@ function MainContent({offer}) {
                   type="checkbox" 
                   onChange={changeGuitarType}
                   disabled={accessibleType.length !== NULL && !accessibleType.includes(TypeFilter.ACUSTIC) && !currentFilterType.includes(TypeFilter.ACUSTIC)} />
-                <label className="filter__label" htmlFor="acustic" >Акустические гитары</label>
+                <label className="filter__label" htmlFor="acustic" tabIndex="0">Акустические гитары</label>
                 <input data-type={TypeFilter.ELECTROGUITAR} id="electro" className="filter__input-checkbox"
-                  type="checkbox" 
+                  type="checkbox"
                   onChange={changeGuitarType}
                   disabled={accessibleType.length !== NULL && !accessibleType.includes(TypeFilter.ELECTROGUITAR) && !currentFilterType.includes(TypeFilter.ELECTROGUITAR)} />
-                <label className="filter__label" htmlFor="electro" >Электрогитары</label>
+                <label className="filter__label" htmlFor="electro" tabIndex="0">Электрогитары</label>
                 <input data-type={TypeFilter.UKYLELE} id="ucylele" className="filter__input-checkbox" 
                   type="checkbox" 
                   onChange={changeGuitarType}
                   disabled={accessibleType.length !== NULL && !accessibleType.includes(TypeFilter.UKYLELE) && !currentFilterType.includes(TypeFilter.UKYLELE)} />
-                <label className="filter__label" htmlFor="ucylele" >Укулеле</label>
+                <label className="filter__label" htmlFor="ucylele" tabIndex="0">Укулеле</label>
               </div>
 
               <div className="filter__number">
@@ -125,25 +125,25 @@ function MainContent({offer}) {
                   onChange={changeNumberString}
                   disabled={accessibleStringCount.length !== NULL && 
                   !accessibleStringCount.includes('4') && !cuerrentFilterStrings.includes("4")} />
-                <label className="filter__label" htmlFor="4" >4</label>
+                <label className="filter__label" htmlFor="4" tabIndex="0">4</label>
                 <input data-type={TypeNumber.SIX} id="6" className="filter__input-checkbox" 
                   type="checkbox"
                   onChange={changeNumberString}
                   disabled={accessibleStringCount.length !== NULL && 
                   !accessibleStringCount.includes('6') && !cuerrentFilterStrings.includes("6")} />
-                <label className="filter__label" htmlFor="6" >6</label>
+                <label className="filter__label" htmlFor="6" tabIndex="0">6</label>
                 <input data-type={TypeNumber.SEVEN} id="7" className="filter__input-checkbox" 
                   type="checkbox"
                   onChange={changeNumberString}
                   disabled={accessibleStringCount.length !== NULL && 
                   !accessibleStringCount.includes('7') && !cuerrentFilterStrings.includes("7")} />
-                <label className="filter__label" htmlFor="7" >7</label>
+                <label className="filter__label" htmlFor="7" tabIndex="0">7</label>
                 <input data-type={TypeNumber.TWELWE} id="12" className="filter__input-checkbox"
                   type="checkbox"
                   onChange={changeNumberString}
                   disabled={accessibleStringCount.length !== NULL && 
                   !accessibleStringCount.includes('12') && !cuerrentFilterStrings.includes("12")} />
-                <label className="filter__label" htmlFor="12" >12</label>
+                <label className="filter__label" htmlFor="12" tabIndex="0">12</label>
               </div>
               <button className="filter__button" onClick={(evt) => {
                 evt.preventDefault();
