@@ -77,14 +77,21 @@ const reducer = (state = initialState, action) => {
         ...state,
         currentIndex: action.payload,
       }
-    case ActionType.ADD_TO_CARD: 
-      const item = {
-        offer: action.payload,
-        count: 1,
-      }
+    case ActionType.ADD_TO_CARD:
+      let isExit = false;
+      const newCard = [...state.card.map((item) => {
+        if(item.offer === action.payload) {
+          isExit = true;
+          item.count += 1; 
+        }
+        return item;
+      })];
       return {
         ...state,
-        card: [item, ...state.card],
+        card: isExit ? newCard : [...newCard, {
+          offer: action.payload,
+          count: 1,
+        }]
       }
     case ActionType.DELETE_FROM_CARD: 
       return {

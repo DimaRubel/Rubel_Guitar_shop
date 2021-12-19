@@ -6,7 +6,6 @@ import { ActionCreator } from "../../store/action";
 function Pagination() {
   const dispatch = useDispatch();
   const currentIndex = useSelector((state) => state.reducer.currentIndex ) + ONE;
-  console.log(currentIndex)
   const offer = useSelector((state) => state.reducer.filteredOffer);
   let pageCount = Math.trunc(offer.length/ PAGE);
   
