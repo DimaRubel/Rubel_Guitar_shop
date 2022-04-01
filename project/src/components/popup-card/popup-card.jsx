@@ -17,8 +17,8 @@ function PopupCard({offerActive, onOfferClose, currentOffer, onSuccessActive}) {
  
   useEffect(() => {
     const body = document.querySelector('body');
-    body.style.overflowX = success ? 'hidden' : 'auto';
-    body.style.overflowY = success ? 'scroll !important' : 'auto';
+    body.style.overflowX = offerActive ? 'hidden' : 'auto';
+    body.style.overflowY = offerActive ? 'scroll !important' : 'auto';
 
     const handleEsc = (event) => {
       if (event.keyCode === 27) {
