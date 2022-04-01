@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import { addMask } from "../../sorting/sorting";
 import { ActionCreator } from "../../store/action";
 import propTypes from 'prop-types';
+import { CSSTransition } from 'react-transition-group';
 
 function PopupCard({offerActive, onOfferClose, currentOffer, onSuccessActive}) {
   const dispatch = useDispatch();

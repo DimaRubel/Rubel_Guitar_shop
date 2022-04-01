@@ -14,7 +14,8 @@ function Success({success,onSuccessClose}) {
 
   useEffect(() => {
     const body = document.querySelector('body');
-    body.style.overflow = success ? 'hidden' : 'auto';
+    body.style.overflowX = success ? 'hidden' : 'auto';
+    body.style.overflowY = success ? 'scroll !important' : 'auto';
 
     const handleEsc = (event) => {
       if (event.keyCode === 27) {

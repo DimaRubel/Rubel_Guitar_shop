@@ -166,6 +166,9 @@ function MainContent({offer}) {
           <div className="image-back__layout-foother"></div>
         </div>
       </section>
+      <details>
+        <summary></summary>
+      </details>
     </main>
   );
 }
